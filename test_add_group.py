@@ -15,12 +15,11 @@ class TestAddGroup(unittest.TestCase):
     
     def test_add_group(self):
         wd = self.wd
-        wd.get("https://recharge.aliexpress.com/mobile_recharge_4_pc.htm?spm=a2g0v.11010108.1000086.1.74a72a45QEoJzM&sellerAliId=926525601&gps-id=5209001&scm=1007.15875.101669.0&scm_id=1007.15875.101669.0&scm-url=1007.15875.101669.0&pvid=6e26ae78-554d-45cb-bafc-0d23f51f514a")
-        wd.find_element_by_name("mobile-mum").click()
-        wd.find_element_by_xpath(u"(.//*[normalize-space(text()) and normalize-space(.)='Скидка:'])[1]/following::button[1]").click()
+        wd.get("http://localhost/addressbook/group.php")
         wd.find_element_by_name("user").click()
         wd.find_element_by_name("user").clear()
         wd.find_element_by_name("user").send_keys("admin")
+        wd.find_element_by_name("pass").click()
         wd.find_element_by_name("pass").clear()
         wd.find_element_by_name("pass").send_keys("secret")
         wd.find_element_by_xpath("//input[@value='Login']").click()
