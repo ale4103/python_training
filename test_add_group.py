@@ -15,6 +15,7 @@ class TestAddGroup(unittest.TestCase):
     
     def test_add_group(self):
         wd = self.wd
+        #open home page
         wd.get("http://localhost/addressbook/group.php")
         wd.find_element_by_name("user").click()
         wd.find_element_by_name("user").clear()
