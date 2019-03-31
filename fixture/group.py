@@ -23,10 +23,10 @@ class GroupHelper():
         self.open_groups_page()
         # select 1st group
         wd.find_element_by_name("selected[]").click()
-        wd.find_element_by_name("selected[]")
+        #wd.find_element_by_name("selected[]")
         # submit deletion
         wd.find_element_by_name("delete").click()
-        wd.find_element_by_name("selected[]")
+        #wd.find_element_by_name("selected[]")
         self.return_to_groups_page()
 
     def edit_first_group(self, group):
