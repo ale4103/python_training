@@ -17,6 +17,7 @@ class ContactHelper():
         self.fill_contact(contact)
         wd.find_element_by_xpath("(//input[@name='submit'])[2]").click()
         self.return_to_home_page()
+        self.contact_cache = None
 
     def delete_first_contact(self):
         wd = self.app.wd
@@ -25,6 +26,7 @@ class ContactHelper():
         wd.find_element_by_xpath("/html/body/div/div[4]/form[2]/div[2]/input").click()
         wd.switch_to_alert().accept()
         self.return_to_home_page()
+        self.contact_cache = None
 
     def edit_first_contact(self, contact):
         wd = self.app.wd
@@ -33,6 +35,7 @@ class ContactHelper():
         self.fill_contact(contact)
         wd.find_element_by_name("update").click()
         self.return_to_home_page()
+        self.contact_cache = None
 
     def fill_contact(self, contact):
         wd = self.app.wd
@@ -57,18 +60,19 @@ class ContactHelper():
         self.return_to_home_page()
         return len(wd.find_elements_by_name("selected[]"))
 
+    contact_cache = None
+
     def get_contact_list(self):
-        wd = self.app.wd
-        self.return_to_home_page()
-        contacts = []
+        if self.contact_cache is None:
+            wd = self.app.wd
+            self.return_to_home_page()
+            self.contact_cache = []
 
-        for element in wd.find_elements_by_css_selector('td:nth-child(1)'):
-            id = element.find_element_by_name('selected[]').get_attribute("value")
-            title = element.find_element_by_name('selected[]').get_attribute("title")
-            title_new = title.split()
-            firstname_text = title_new[1][1:]
-            lastname_text = title_new[2][:-1]
-            contacts.append(Contact(firstname=firstname_text, lastname=lastname_text, id=id))
-
-        print('Contacts ', contacts)
-        return contacts
+            for element in wd.find_elements_by_css_selector('td:nth-child(1)'):
+                id = element.find_element_by_name('selected[]').get_attribute("value")
+                title = element.find_element_by_name('selected[]').get_attribute("title")
+                title_new = title.split()
+                firstname_text = title_new[1][1:]
+                lastname_text = title_new[2][:-1]
+                self.contact_cache.append(Contact(firstname=firstname_text, lastname=lastname_text, id=id))
+        return list(self.contact_cache)
