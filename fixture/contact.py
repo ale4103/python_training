@@ -90,11 +90,9 @@ class ContactHelper():
             self.return_to_home_page()
             self.contact_cache = []
 
-            for element in wd.find_elements_by_css_selector('td:nth-child(1)'):
+            for element in wd.find_elements_by_name('entry'):
                 id = element.find_element_by_name('selected[]').get_attribute("value")
-                title = element.find_element_by_name('selected[]').get_attribute("title")
-                title_new = title.split()
-                firstname_text = title_new[1][1:]
-                lastname_text = title_new[2][:-1]
+                firstname_text = element.find_element_by_css_selector('td:nth-child(3)').text
+                lastname_text = element.find_element_by_css_selector('td:nth-child(2)').text
                 self.contact_cache.append(Contact(firstname=firstname_text, lastname=lastname_text, id=id))
         return list(self.contact_cache)
