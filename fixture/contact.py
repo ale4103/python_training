@@ -90,17 +90,15 @@ class ContactHelper():
             wd = self.app.wd
             self.return_to_home_page()
             self.contact_cache = []
-
             for row in wd.find_elements_by_name('entry'):
                 cells = row.find_elements_by_tag_name("td")
                 firstname = cells[1].text
                 lastname = cells[2].text
                 id = cells[0].find_element_by_tag_name("input").get_attribute("value")
-                all_phones = cells[5].text.splitlines()
+                all_phones = cells[5].text
                 print('ALL_Phones ', all_phones)
                 self.contact_cache.append(Contact(firstname=firstname, lastname=lastname, id=id,
-                                                  homephone=all_phones[0], mobile=all_phones[1],
-                                                  workphone=all_phones[2], secondaryphone=all_phones[3]))
+                                                  all_phones_from_home_page=all_phones))
         return list(self.contact_cache)
 
     def open_contact_to_edit_by_index(self, index):
