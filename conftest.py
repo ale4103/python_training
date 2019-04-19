@@ -17,7 +17,7 @@ def app(request):
         with open(config_file) as f:
             target = json.load(f)
     if fixture is None or not fixture.is_valid():
-        fixture = Application(browser=browser, base_url=target['baseUrl'])
+        fixture = Application(browser=target["browser"], base_url=target['baseUrl'])
     fixture.session.ensure_login(username=target["username"], password=target["password"])
     return fixture
 
@@ -31,5 +31,5 @@ def stop(request):
     return fixture
 
 def pytest_addoption(parser):
-    parser.addoption("--browser", action="store", default="firefox")
+    parser.addoption("--browser", action="store", default="target.json")
     parser.addoption("--target", action="store", default="target.json")
