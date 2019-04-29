@@ -73,6 +73,17 @@ class ContactHelper():
         self.return_to_home_page()
         self.contact_cache = None
 
+    def edit_contact_by_id(self, id, contact):
+        wd = self.app.wd
+        self.open_home_page()
+        self.select_contact_by_id(id)
+        #wd.find_element_by_xpath("/html/body/div/div[4]/form[2]/table/tbody/tr[2]/td[8]/a/img").click()
+        wd.find_element_by_css_selector('a[href="edit.php?id=%s"]' % id).click()
+        self.fill_contact(contact)
+        wd.find_element_by_name("update").click()
+        self.return_to_home_page()
+        self.contact_cache = None
+
     def fill_contact(self, contact):
         wd = self.app.wd
         self.change_field_value("firstname", contact.firstname)
