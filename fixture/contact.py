@@ -171,3 +171,7 @@ class ContactHelper():
         secondaryphone = re.search("P: (.*)", text).group(1)
         return Contact(homephone=homephone, workphone=workphone,
                        mobile=mobile, secondaryphone=secondaryphone)
+
+    def add_contact_to_group_by_id(self):
+        wd = self.app.wd
+        wd.find_element_by_css_selector("input[name='add']").click()

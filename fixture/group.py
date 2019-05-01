@@ -124,3 +124,8 @@ class GroupHelper():
                 id = element.find_element_by_name('selected[]').get_attribute("value")
                 self.group_cache.append(Group(name=text, id=id))
         return list(self.group_cache)
+
+    def select_group_from_group_menu(self, id):
+        wd = self.app.wd
+        wd.find_element_by_css_selector("select[name='to_group").click()
+        wd.find_element_by_css_selector("select[name='to_group'] option[value='%s']" % id).click()
