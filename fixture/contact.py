@@ -175,3 +175,12 @@ class ContactHelper():
     def add_contact_to_group_by_id(self):
         wd = self.app.wd
         wd.find_element_by_css_selector("input[name='add']").click()
+
+    def delete_contact_from_group_by_id(self, id):
+        wd = self.app.wd
+        self.select_contact_by_id(id)
+        wd.find_element_by_css_selector('input[name="remove"]').click()
+
+    def open_group_page_with_contacts(self, id):
+        wd = self.app.wd
+        wd.get("http://localhost/addressbook/?group=%s" % id)
