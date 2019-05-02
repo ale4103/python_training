@@ -16,8 +16,10 @@ def test_add_contact_to_group(app):
         app.group.create(Group(name="test"))
     group = db.get_group_list()
     selected_group = random.choice(group)
-    old_list_of_contacts_in_group = len(db.get_contacts_in_group(selected_group))
+    old_list_of_contacts_in_group = db.get_contacts_in_group(selected_group)
     app.group.select_group_from_group_menu(selected_group.id)
     app.contact.add_contact_to_group_by_id()
-    new_list_of_contacts_in_group = len(db.get_contacts_in_group(selected_group))
-    assert old_list_of_contacts_in_group + 1 == new_list_of_contacts_in_group
+    new_list_of_contacts_in_group = db.get_contacts_in_group(selected_group)
+    assert len(old_list_of_contacts_in_group) + 1 == len(new_list_of_contacts_in_group)
+    old_list_of_contacts_in_group.append(contact)
+    assert old_list_of_contacts_in_group == new_list_of_contacts_in_group
