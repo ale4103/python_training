@@ -26,12 +26,17 @@ def test_compare_contacts_on_home_page_and_db(app, db):
         assert contacts_from_home_page_sorted[x].firstname == contact_from_data_base_sorted[x].firstname.strip()
         assert contacts_from_home_page_sorted[x].lastname == contact_from_data_base_sorted[x].lastname.strip()
         assert contacts_from_home_page_sorted[x].address == contact_from_data_base_sorted[x].address
+        assert contacts_from_home_page_sorted[x].all_emails == merge_emails_like_on_home_page(
+            contact_from_data_base_sorted[x])
 
 def clear(s):
     return re.sub("[() -]", "", s)
 
 def merge_emails_like_on_home_page(contact):
-    return '\n'.join([contact.email, contact.email2, contact.email3])
+    return "\n".join(filter(lambda x: x != "",
+                            map(lambda x: clear(x),
+                                filter(lambda x: x is not None,
+                                       [contact.email, contact.email2, contact.email3]))))
 
 def merge_phones_like_on_home_page(contact):
     print("contact value is ", contact)
