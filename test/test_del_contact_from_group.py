@@ -21,9 +21,11 @@ def test_delete_contact_to_group(app):
         app.group.select_group_from_group_menu(selected_group.id)
         app.contact.add_contact_to_group_by_id()
         list_of_contacts_in_group = db.get_contacts_in_group(selected_group)
-    count_contacts_in_group_before_deleting = len(db.get_contacts_in_group(selected_group))
+    contacts_in_group_before_deleting = db.get_contacts_in_group(selected_group)
     app.contact.open_group_page_with_contacts(selected_group.id)
     selected_contact = random.choice(list_of_contacts_in_group)
     app.contact.delete_contact_from_group_by_id(selected_contact.id)
-    count_contacts_in_group_after_deleting = len(db.get_contacts_in_group(selected_group))
-    assert count_contacts_in_group_before_deleting - 1 == count_contacts_in_group_after_deleting
+    contacts_in_group_after_deleting = db.get_contacts_in_group(selected_group)
+    assert len(contacts_in_group_before_deleting) - 1 == len(contacts_in_group_after_deleting)
+    contacts_in_group_after_deleting.append(contact)
+    assert contacts_in_group_before_deleting == contacts_in_group_after_deleting
