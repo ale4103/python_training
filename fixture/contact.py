@@ -158,8 +158,7 @@ class ContactHelper():
         return Contact(firstname = firstname, lastname = lastname, id = id,
                        homephone = homephone, mobile = mobile,
                        workphone = workphone, secondaryphone = secondaryphone,
-                       address = address,
-                       email=email, email2=email2, email3=email3)
+                       address = address, email=email, email2=email2, email3=email3)
 
     def get_contact_from_view_page(self, index):
         wd = self.app.wd

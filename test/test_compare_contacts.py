@@ -28,6 +28,8 @@ def test_compare_contacts_on_home_page_and_db(app, db):
         assert contacts_from_home_page_sorted[x].address == contact_from_data_base_sorted[x].address
         assert contacts_from_home_page_sorted[x].all_emails == merge_emails_like_on_home_page(
             contact_from_data_base_sorted[x])
+        assert contacts_from_home_page_sorted[x].all_phones_from_home_page == merge_phones_like_on_home_page(
+            contact_from_data_base_sorted[x])
 
 def clear(s):
     return re.sub("[() -]", "", s)
