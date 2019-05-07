@@ -27,5 +27,5 @@ def test_delete_contact_to_group(app):
     app.contact.delete_contact_from_group_by_id(selected_contact.id)
     contacts_in_group_after_deleting = db.get_contacts_in_group(selected_group)
     assert len(contacts_in_group_before_deleting) - 1 == len(contacts_in_group_after_deleting)
-    contacts_in_group_after_deleting.append(contact)
+    contacts_in_group_after_deleting.append(selected_contact)
     assert contacts_in_group_before_deleting == contacts_in_group_after_deleting
