@@ -1,0 +1,8 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Fri May 17 17:49:29 MSK 2019","Fri May 17 17:49:31 MSK 2019","2411","test","test_add_group","test_add_group[None","","","test_add_group[None:::]",""
+"failed","Fri May 17 17:49:36 MSK 2019","Fri May 17 17:49:38 MSK 2019","1869","test","test_add_group","","","","test_add_group[None:name&OB'lw:headerYEG,:footer6iiC]",""
+"failed","Fri May 17 17:49:33 MSK 2019","Fri May 17 17:49:34 MSK 2019","1389","test","test_add_group","","","","test_add_group[None:name:headerxR>K.N}vyTdZO?w|:footer/Wxy{q0BoA']",""
+"passed","Fri May 17 17:49:31 MSK 2019","Fri May 17 17:49:33 MSK 2019","1490","test","test_add_group","","","","test_add_group[None:nameom{:headerm`J&%6""CVIZPVP-_9|:footerc_fxmx:6]o]",""
+"failed","Fri May 17 17:49:35 MSK 2019","Fri May 17 17:49:36 MSK 2019","1245","test","test_add_group","","","","test_add_group[None:namew39:header25""R<Ke8=S;:footerDhLI4P""FoAzIG_B%'M(]",""
+"passed","Fri May 17 17:58:12 MSK 2019","Fri May 17 17:58:15 MSK 2019","2342","test","test_del_group","","","","test_delete_some_group",""
+"passed","Fri May 17 17:49:38 MSK 2019","Fri May 17 17:49:40 MSK 2019","1424","test","test_add_group","","","","test_add_group[None:nameS5:header).Lwu;9p_m4Dvj;O8:footerW6`qD$I0)l^p""K]",""

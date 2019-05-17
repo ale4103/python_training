@@ -1,0 +1,60 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: assert [4:fsdfdsf:ds...q:qwerty, ...] == [4:fsdfdsf:dsf...q:qwerty, ...]\n  Left contains more items, first extra item: None:name:headerxR>K.N}vyTdZO?w|:footer/Wxy{q0BoA'\n  Use -v to get the full diff",
+      "children" : [ {
+        "name" : "test_add_group[None:name:headerxR>K.N}vyTdZO?w|:footer/Wxy{q0BoA']",
+        "uid" : "ffdc9f9802e61053",
+        "parentUid" : "a29e3a47df06bdb6c0da68a24fffc9d9",
+        "status" : "failed",
+        "time" : {
+          "start" : 1558104573565,
+          "stop" : 1558104574954,
+          "duration" : 1389
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "None:name:headerxR>K.N}vyTdZO?w|:footer/Wxy{q0BoA'" ]
+      } ],
+      "uid" : "a29e3a47df06bdb6c0da68a24fffc9d9"
+    }, {
+      "name" : "AssertionError: assert [4:fsdfdsf:ds...q:qwerty, ...] == [4:fsdfdsf:dsf...q:qwerty, ...]\n  Left contains more items, first extra item: None:namew39:header25\"R<Ke8=S;:footerDhLI4P\"FoAzIG_B%'M(\n  Use -v to get the full diff",
+      "children" : [ {
+        "name" : "test_add_group[None:namew39:header25\"R<Ke8=S;:footerDhLI4P\"FoAzIG_B%'M(]",
+        "uid" : "242d849ca583e62",
+        "parentUid" : "b9baf18c6fd85740c527bfb85158aa8d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1558104575131,
+          "stop" : 1558104576376,
+          "duration" : 1245
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "None:namew39:header25\"R<Ke8=S;:footerDhLI4P\"FoAzIG_B%'M(" ]
+      } ],
+      "uid" : "b9baf18c6fd85740c527bfb85158aa8d"
+    }, {
+      "name" : "AssertionError: assert [4:fsdfdsf:ds...q:qwerty, ...] == [4:fsdfdsf:dsf...q:qwerty, ...]\n  Left contains more items, first extra item: None:name&OB'lw:headerYEG,:footer6iiC\n  Use -v to get the full diff",
+      "children" : [ {
+        "name" : "test_add_group[None:name&OB'lw:headerYEG,:footer6iiC]",
+        "uid" : "e7be4a6e716c0276",
+        "parentUid" : "37d43beb1049d06ee8e41f20f56e3ca2",
+        "status" : "failed",
+        "time" : {
+          "start" : 1558104576830,
+          "stop" : 1558104578699,
+          "duration" : 1869
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "None:name&OB'lw:headerYEG,:footer6iiC" ]
+      } ],
+      "uid" : "37d43beb1049d06ee8e41f20f56e3ca2"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}
