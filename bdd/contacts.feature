@@ -17,7 +17,7 @@ Scenario: Delete a contact
   Then the new contact list is equal to the old list without the deleted
 
 Scenario Outline: Edit a contact
-  Given a contact list
+  Given a non-empty contact list
   Given a random contact from the list
   Given a contact with <firstname>, <lastname> and <mobile>
   When I edit the contact from the list

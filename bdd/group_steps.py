@@ -44,3 +44,17 @@ def verify_group_deleted(db, non_empty_group_list, random_group, app, check_ui):
     assert old_groups == new_groups
     if check_ui:
         assert sorted(new_groups, key=Group.id_or_max) == sorted(app.group.get_group_list(), key=Group.id_or_max)
+
+@when('I edit the group from the list')
+def change_group(app,random_group, new_group):
+    app.group.edit_group_by_id(random_group.id, new_group)
+
+@then('the new group list is equal to the old group list')
+def verify_contact_changed(db,non_empty_group_list, random_group,new_group,app,check_ui):
+    old_groups = non_empty_group_list
+    new_groups = db.get_group_list()
+    new_group.id=random_group.id
+    old_groups[old_groups.index(random_group)] = new_group
+    assert sorted(new_groups, key=Group.id_or_max) == sorted(app.group.get_group_list(), key=Group.id_or_max)
+    if check_ui:
+        assert sorted(new_groups, key=Group.id_or_max) == sorted(app.group.get_group_list(), key=Group.id_or_max)

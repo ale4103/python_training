@@ -59,4 +59,3 @@ def verify_contact_changed(db,non_empty_contact_list, random_contact,new_contact
     assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
     if check_ui:
         assert sorted(old_contacts, key=Contact.id_or_max) == sorted(app.contact.get_contact_list(), key=Contact.id_or_max)
-        print("check_ui")
