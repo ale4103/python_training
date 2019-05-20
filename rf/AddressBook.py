@@ -52,7 +52,7 @@ class AddressBook:
     def get_contact_list(self):
         return self.dbfixture.get_contact_list()
 
-    def new_contact(self, firstname=None, lastname=None, mobile=None):
+    def new_contact(self, firstname='name_123', lastname='name_456', mobile='789'):
         return Contact(firstname=firstname, lastname=lastname, mobile=mobile)
 
     def create_contact(self, contact):

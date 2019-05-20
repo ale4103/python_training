@@ -29,7 +29,7 @@ Edit group
     ${len}=    Get Length    ${old_list}
     ${index}=    Evaluate   random.randrange(${len})    random
     ${random_group}=   Get From List   ${old_list}   ${index}
-    ${edit_group}=  New Group    name55   header478   footer325
+    ${edit_group}=  New Group    name2   header2   footer2
     Edit group    ${random_group}    ${edit_group}
     ${new_list}=   Get Group List
     Replace Values List    ${old_list}   ${index}   ${edit_group}
